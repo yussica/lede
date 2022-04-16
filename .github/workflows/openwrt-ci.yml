@@ -49,7 +49,8 @@ jobs:
 
       - name: add theme
         run: |
-          cd lede/package/lean
+          ls -al
+          cd package/lean
           rm -rf luci-theme-argon
           git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  
           # make menuconfig #choose LUCI->Theme->Luci-theme-argon  
@@ -67,11 +68,11 @@ jobs:
           touch ./.config
           #
           # change configs
-          cat >> .config <<EOF
-          CONFIG_TARGET_IMAGES_GZIP=y
-          CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
-          CONFIG_KERNEL_BUILD_DOMAIN="Azure"
-          EOF
+          # cat >> .config <<EOF
+          # CONFIG_TARGET_IMAGES_GZIP=y
+          # CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
+          # CONFIG_KERNEL_BUILD_DOMAIN="Azure"
+          # EOF
           #
           # ===============================================================
           # 
